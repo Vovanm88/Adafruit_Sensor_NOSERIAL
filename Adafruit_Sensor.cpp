@@ -1,10 +1,10 @@
 #include "Adafruit_Sensor.h"
-
 /**************************************************************************/
 /*!
     @brief  Prints sensor information to serial console
 */
 /**************************************************************************/
+#ifdef USESERIAL
 void Adafruit_Sensor::printSensorDetails(void) {
   sensor_t sensor;
   getSensor(&sensor);
@@ -118,3 +118,4 @@ void Adafruit_Sensor::printSensorDetails(void) {
   Serial.println(sensor.resolution);
   Serial.println(F("------------------------------------\n"));
 }
+#endif
