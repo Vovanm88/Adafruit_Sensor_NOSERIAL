@@ -20,6 +20,8 @@
 #ifndef _ADAFRUIT_SENSOR_H
 #define _ADAFRUIT_SENSOR_H
 
+// #define USESERIAL Serial
+
 #ifndef ARDUINO
 #include <stdint.h>
 #elif ARDUINO >= 100
@@ -217,8 +219,9 @@ public:
   virtual bool getEvent(sensors_event_t *) = 0;
   /*! @brief Get info about the sensor itself */
   virtual void getSensor(sensor_t *) = 0;
-
+#ifdef USESERIAL
   void printSensorDetails(void);
+#endif
 };
 
 #endif
